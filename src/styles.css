@@ -1,0 +1,172 @@
+@import "tailwindcss";
+@import "@fontsource/fraunces/latin-400.css";
+@import "@fontsource/fraunces/latin-600.css";
+@import "@fontsource/fraunces/latin-600-italic.css";
+@import "@fontsource/outfit/latin-400.css";
+@import "@fontsource/outfit/latin-500.css";
+@import "@fontsource/outfit/latin-600.css";
+
+@theme {
+  --font-sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --color-bg: #14110e;
+  --color-surface: #211c17;
+  --color-surface-2: #2c261f;
+  --color-fg: #f6f1e8;
+  --color-muted: #a89886;
+  --color-primary: #e39a4a;
+  --color-primary-fg: #1a1208;
+  --color-line: #3a3229;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-primary) 45%, transparent);
+    color: var(--color-fg);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line) transparent;
+  }
+}
+
+.tap {
+  transition: scale 150ms ease-out;
+}
+
+.tap:active:not(:disabled) {
+  scale: 0.96;
+}
+
+.safe-top {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.spindle {
+  width: 12%;
+  height: 12%;
+}
+
+.lamp {
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-primary) 42%, transparent), transparent 72%);
+}
+
+.disc-spin {
+  animation: spin-disc 18s linear infinite;
+}
+
+.disc-spin.is-paused {
+  animation-play-state: paused;
+}
+
+@keyframes spin-disc {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-swap {
+  display: flex;
+  transition:
+    opacity 300ms cubic-bezier(0.2, 0, 0, 1),
+    filter 300ms cubic-bezier(0.2, 0, 0, 1),
+    scale 300ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.icon-in {
+  opacity: 1;
+  scale: 1;
+  filter: blur(0);
+}
+
+.icon-out {
+  opacity: 0;
+  scale: 0.25;
+  filter: blur(4px);
+}
+
+.bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 0.75rem;
+}
+
+.bars i {
+  display: block;
+  width: 2px;
+  height: 0.75rem;
+  transform-origin: bottom;
+  background: var(--color-primary);
+  animation: bar 0.9s ease-in-out infinite alternate;
+}
+
+.bars i:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.bars i:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes bar {
+  from {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 4.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .disc-spin,
+  .bars i,
+  .tap,
+  .icon-swap {
+    animation: none;
+    transition: none;
+  }
+}

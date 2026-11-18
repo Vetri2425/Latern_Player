@@ -1,0 +1,40 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Lantern",
+      "hasCanvas": false,
+      "bodyTextLen": 259,
+      "bodyTextHash": "ff5fe658d26f6a1ad8aa746587a749a4b044c455424874e6d1236a2573d867fb",
+      "bodyTextPrefix": "Lantern On this device · no signal needed Songs Albums Playlists",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Lantern",
+      "hasCanvas": false,
+      "bodyTextLen": 198,
+      "bodyTextHash": "2b8b004b3a5b4149d0df373572506e225ec4d45231aafc086d07027a44da0fcb",
+      "bodyTextPrefix": "Lantern On this device · no signal needed Songs Albums Playlists",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": true,
+  "baselineReasons": [
+    "desktop: body text changed (68 -> 259 chars, hash mismatch)"
+  ]
+}

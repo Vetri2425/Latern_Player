@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Lantern",
+      "hasCanvas": false,
+      "bodyTextLen": 68,
+      "bodyTextHash": "b303afc5ab572d25d8280ac3415f5b63a96583a6c05d2fcba67d5c3b985b3988",
+      "bodyTextPrefix": "On this device Lantern Local music, with no internet and no acco",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Lantern",
+      "hasCanvas": false,
+      "bodyTextLen": 198,
+      "bodyTextHash": "2b8b004b3a5b4149d0df373572506e225ec4d45231aafc086d07027a44da0fcb",
+      "bodyTextPrefix": "Lantern On this device · no signal needed Songs Albums Playlists",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
